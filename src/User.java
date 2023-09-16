@@ -16,12 +16,10 @@ public class User {
     }
 
     public void removeFromCart(Product product){
-
         cart.remove(product);
     }
 
     public void changeQuantity(Product product, int amount){
-
         cart.replace(product, amount);
     }
 
@@ -31,5 +29,11 @@ public class User {
             total += product.getPrice() * cart.get(product);       // TODO product.equals7
         }
         money -= total;     // TODO if not enough money
+        System.out.println("Вы приобрели товары на сумму " + total + " рублей");
+        System.out.println("Ваш баланс: " + money);
+    }
+
+    public int getMoney() {
+        return money;
     }
 }
